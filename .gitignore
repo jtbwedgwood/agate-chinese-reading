@@ -1,3 +1,11 @@
+# secret config file
+backend/config.py
+
+# test notebook
+backend/test.ipynb
+
+#####
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
