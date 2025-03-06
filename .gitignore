@@ -4,6 +4,9 @@ backend/config.py
 # test notebook
 backend/test.ipynb
 
+# databases
+*.db
+
 #####
 
 # Byte-compiled / optimized / DLL files
