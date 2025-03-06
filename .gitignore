@@ -7,6 +7,9 @@ backend/test.ipynb
 # databases
 *.db
 
+# node modules
+frontend/node_modules
+
 #####
 
 # Byte-compiled / optimized / DLL files
