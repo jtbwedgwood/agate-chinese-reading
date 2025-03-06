@@ -8,7 +8,7 @@ from routes import prompts
 from routes.models import Vocabulary
 
 
-CURRENT_USER = 0
+CURRENT_USER = 1
 
 # Create a Blueprint instance
 api_bp = Blueprint('api', __name__, url_prefix='/api')
@@ -17,8 +17,8 @@ api_bp = Blueprint('api', __name__, url_prefix='/api')
 def example_route():
     return jsonify({"message": "This is an example API response"})
 
-@api_bp.route('/api/generate', methods=['POST'])
-def generate_passage(data):
+@api_bp.route('/generate', methods=['POST'])
+def generate_passage():
     llm_generate = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.7, openai_api_key=os.getenv("OPENAI_API_KEY"))
 
     data = request.get_json()
