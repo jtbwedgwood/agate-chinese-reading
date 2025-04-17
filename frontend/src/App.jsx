@@ -1,38 +1,26 @@
-import { useState } from "react";
-import Slider from "./components/Slider";
-import TextInput from "./components/TextInput";
-import GenerateButton from "./components/GenerateButton";
-import TextBox from "./components/TextBox";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import PassagesPage from "./pages/PassagesPage";
+import VocabPage from "./pages/VocabPage";
+import StatsPage from "./pages/StatsPage";
 
 function App() {
-  const [difficulty, setDifficulty] = useState(3);
-  const [length, setLength] = useState(200);
-  const [topic, setTopic] = useState("");
-  const [generatedText, setGeneratedText] = useState("");
-
-  function fetchPassage() {
-    fetch("/api/generate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ difficulty, length, topic }),
-    })
-      .then((res) => res.json())
-      .then((data) => setGeneratedText(data.passage))
-      .catch((err) => console.error("Error fetching passage:", err));
-  }
-
   return (
-    <div className="max-w-xl mx-auto p-6 flex flex-col gap-4">
-      <h1 className="text-2xl font-bold text-gray-800 text-center">
-        Chinese Passage Generator
-      </h1>
+    <Router>
+      <div className="flex h-screen">
+        {/* Sidebar */}
+        <Sidebar />
 
-      <Slider label="Difficulty (HSK)" min={1} max={9} value={difficulty} setValue={setDifficulty} />
-      <Slider label="Length (Characters)" min={100} max={500} value={length} setValue={setLength} />
-      <TextInput label="Topic" value={topic} setValue={setTopic} />
-      <GenerateButton onClick={fetchPassage} />
-      <TextBox text={generatedText} />
-    </div>
+        {/* Main Content */}
+        <div className="flex-1 p-6 bg-gray-50">
+          <Routes>
+            <Route path="/passages" element={<PassagesPage />} />
+            <Route path="/vocab" element={<VocabPage />} />
+            <Route path="/stats" element={<StatsPage />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

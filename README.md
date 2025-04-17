@@ -4,6 +4,20 @@
 
 This is a full-stack web application designed to generate Chinese passages based on user-selected difficulty, length, and topic. It allows users to practice reading and eventually measure their reading speed. The backend is built with Flask, and the frontend is developed using React with Vite.
 
+## General Instructions
+
+To run app:
+```
+# ensure that frontend is compiled right
+cd frontend
+npm install
+npm run build
+
+# run app
+cd backend
+flask run
+```
+
 ## Features
 
 ### Frontend (React + Vite)
