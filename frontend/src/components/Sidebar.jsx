@@ -6,7 +6,7 @@ function Sidebar({ setShowPassageOverlay }) {
     <div className="h-screen w-64 bg-white shadow-md flex flex-col items-center py-6 border-r">
       {/* Logo */}
       <div className="flex justify-center items-center w-full">
-        <img src={logo} alt="Logo" className="w-24 md:w-32 h-auto" />
+        <img src={logo} alt="Logo" className="w-24 md:w-32 mb-12 h-auto" />
       </div>
 
       {/* Navigation Links */}
@@ -16,21 +16,21 @@ function Sidebar({ setShowPassageOverlay }) {
           onClick={() => setShowPassageOverlay(false)}
           className="flex items-center px-6 py-3 hover:bg-gray-100 text-gray-700 font-semibold transition rounded-lg w-full"
         >
-          📖 Passages
+          Passages
         </NavLink>
 
         <NavLink
           to="/vocab"
           className="flex items-center px-6 py-3 hover:bg-gray-100 text-gray-700 font-semibold transition rounded-lg w-full"
         >
-          📚 Vocab
+          Vocab
         </NavLink>
 
         <NavLink
           to="/stats"
           className="flex items-center px-6 py-3 hover:bg-gray-100 text-gray-700 font-semibold transition rounded-lg w-full"
         >
-          📊 Stats
+          Stats
         </NavLink>
       </nav>
     </div>
