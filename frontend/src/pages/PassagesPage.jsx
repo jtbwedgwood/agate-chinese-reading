@@ -27,7 +27,7 @@ function PassagesPage() {
         Chinese Passage Generator
       </h1>
 
-      <Slider label="Difficulty (HSK)" min={1} max={9} value={difficulty} setValue={setDifficulty} />
+      <Slider label="Difficulty (HSK)" min={1} max={6} value={difficulty} setValue={setDifficulty} />
       <Slider label="Length (Characters)" min={100} max={500} step={50} value={length} setValue={setLength} />
       <TextInput label="Topic" value={topic} setValue={setTopic} />
       <GenerateButton onClick={fetchPassage} />
