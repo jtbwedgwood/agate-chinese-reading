@@ -19,7 +19,7 @@ def example_route():
 
 @api_bp.route('/generate', methods=['POST'])
 def generate_passage():
-    llm_generate = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.7, openai_api_key=os.getenv("OPENAI_API_KEY"))
+    llm_generate = ChatOpenAI(model_name="gpt-4o", temperature=1.0, openai_api_key=os.getenv("OPENAI_API_KEY"))
 
     data = request.get_json()
     topic = data.get('topic', '任意主题')  # default to random if not provided
